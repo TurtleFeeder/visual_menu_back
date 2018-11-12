@@ -11,9 +11,11 @@ hrs_array = ['9AM-6PM', '11AM-8PM', '1PM-10PM']
 r_name_enders = ["'s Kitchen", "'s Restaurant", "'s Cafe"]
 Faker::Config.locale = 'en-US'
 
-# create Restaurants
 5.times do
-  Restaurant.create(name: Faker::Name.unique.first_name + r_name_enders.sample, hours: hrs_array.sample, location: Faker::Address.unique.full_address, phone: Faker::PhoneNumber.area_code + Faker::PhoneNumber.exchange_code + Faker::PhoneNumber.unique.subscriber_number(4))
+  a = Faker::PhoneNumber.area_code
+  b = Faker::PhoneNumber.exchange_code
+  c = Faker::PhoneNumber.unique.subscriber_number(4)
+  Restaurant.create(name: Faker::Name.unique.first_name + r_name_enders.sample, hours: hrs_array.sample, location: Faker::Address.unique.full_address, phone: "(#{a})#{b}-#{c}")
 end
 
 # Faker::Food.dish #=> "Caesar Salad"
