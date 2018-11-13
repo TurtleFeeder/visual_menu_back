@@ -46,4 +46,27 @@ p "Created #{Meal.count} meals"
                     username: Faker::Name.name)
 end
 
+
+
+p "Created #{Restaurant.count} restaurant"
+
+
+
+50.times do
+  Meal.create(name: Faker::Food.dish,
+                        description: Faker::Food.description,
+                        imgurl: Faker::LoremFlickr.image("300x300", ['meal']),
+                      restaurant_id: restaurant_id_array.sample,
+                    price: price_array.sample)
+end
+
+p "Created #{Meal.count} meals"
+
+200.times do
+  Review.create(rating: rating_array.sample,
+                      meal_id: meal_id_array.sample,
+                      content: Faker::Movie.quote,
+                    username: Faker::Name.name)
+end
+
 p "Created #{Review.count} reviews"
