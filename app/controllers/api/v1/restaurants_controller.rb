@@ -2,8 +2,8 @@ class Api::V1::RestaurantsController < ApplicationController
   before_action :find_restaurant, only: [:show, :destroy]
   def index
     @restaurants = Restaurant.all
-    render json: @restaurants, status: :ok
-    # render json: @restaurants, include: '**', status: :ok
+    # render json: @restaurants, status: :ok
+    render json: @restaurants, include:  'meals.reviews', status: :ok
   end
 
   def show
