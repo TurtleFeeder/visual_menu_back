@@ -39,14 +39,11 @@ Restaurant.destroy_all
   Restaurant.create(name: Faker::Name.unique.first_name + r_name_enders.sample, hours: hrs_array.sample, location: Faker::Address.unique.full_address, phone: "(#{a})#{b}-#{c}")
 end
 
-
-
 p "Created #{Restaurant.count} restaurant"
 
-# the Faker::LoremFlickr.image("300x300", ['meal']) is generating only the base URL "http://loremflickr.com/300/300/meal" - try to figure out restclient to get the resulting different url response each time
-# byebug
+# the Faker::LoremFlickr.image("300x300", ['meal']) is generating only the base URL "http://loremflickr.com/300/300/meal" - this needs to be sent through a get request to get a new image each time
 # response = RestClient.get(Faker::LoremFlickr.image("300x300", ['meal']))
-# the response.body returns a very long string of unreadable characters
+# the response.body returns a very long string of unreadable characters - can't use this for the meal image seed data
 
 50.times do
   Meal.create(name: Faker::Food.dish,
