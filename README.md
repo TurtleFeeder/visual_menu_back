@@ -1,5 +1,11 @@
 # README
 
+# REQUIRED
+This repository is the back-end for the visual menu application.
+
+Link to front-end: https://github.com/TurtleFeeder/visual_menu_front
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

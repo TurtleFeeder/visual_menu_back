@@ -47,6 +47,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # convert data into format that can easily transfer across a network as a string and reconstructed later.
 gem 'active_model_serializers'
 
+# generate data for seed file
 gem 'faker'
 
 gem 'rest-client'
